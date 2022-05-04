@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+def junitVersion = '5.8.2'
+def assertJVersion = "3.21.0"
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testImplementation "org.assertj:assertj-core:$assertJVersion"
+
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+}
+
+test {
+    useJUnitPlatform()
+}
